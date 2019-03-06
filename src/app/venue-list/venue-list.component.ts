@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {VenueService} from '../services/venue.service';
+import {generateErrorMessage} from 'codelyzer/angular/styles/cssLexer';
 
 @Component({
   selector: 'app-venue-list',
@@ -8,6 +9,9 @@ import {VenueService} from '../services/venue.service';
 })
 export class VenueListComponent implements OnInit {
   location = {};
+  venueDetails;
+  errorMessage;
+  error = false;
   constructor(private venueService: VenueService) { }
 
   ngOnInit() {
@@ -16,8 +20,13 @@ export class VenueListComponent implements OnInit {
         this.location = position.coords;
         // let x = position.coords;
         console.log(this.location);
-        this.venueService.getVenues(this.location).subscribe( data => console.log(data));
+        this.venueService.getVenues(this.location).subscribe( data => {
+          this.venueDetails = data.response.groups[0].items;
+          console.log(this.venueDetails);
+        });
       });
+    } else {
+        this.error = true;
     }
   }
 }

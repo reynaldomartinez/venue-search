@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'venue-search';
+  cupImage = 'assets/coffee.png';
 }

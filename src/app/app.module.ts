@@ -5,12 +5,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { VenueListComponent } from './venue-list/venue-list.component';
+import { HomeComponent } from './home/home.component';
+import { DropdownListComponent } from './partials/dropdown-list/dropdown-list.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    VenueListComponent
+    VenueListComponent,
+    HomeComponent,
+    DropdownListComponent
   ],
   imports: [
     BrowserModule,

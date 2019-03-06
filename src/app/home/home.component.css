@@ -1,0 +1,15 @@
+.title {
+  margin-top: 10px;
+  font-family: 'Indie Flower', cursive;
+  color: #fff;
+}
+
+.coffeeCup {
+  margin-top: 100px;
+  height: 130px;
+  width: 90px;
+}
+
+.coffeeCup a {
+  margin: 0 auto;
+}
