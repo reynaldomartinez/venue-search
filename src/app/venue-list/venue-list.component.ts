@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {VenueService} from '../services/venue.service';
+import { VenueService } from '../services/venue.service';
 
 @Component({
   selector: 'app-venue-list',
@@ -19,8 +19,9 @@ export class VenueListComponent implements OnInit {
           // let x = position.coords;
           // console.log(this.location);
             this.venueService.getVenues(this.location).subscribe( (data): any => {
-                // @ts-ignore
-                this.venueDetails = data.response.groups[0].items;
+                // this.venueDetails = data.response.groups[0].items;
+              this.venueDetails = [];
+              // this.venueDetails = data.response.groups[0].items;
                 console.log(this.venueDetails);
                 console.log(data);
           // console.log(this.venueDetails);
