@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {VenueService} from '../services/venue.service';
-import {generateErrorMessage} from 'codelyzer/angular/styles/cssLexer';
 
 @Component({
   selector: 'app-venue-list',
@@ -9,20 +8,21 @@ import {generateErrorMessage} from 'codelyzer/angular/styles/cssLexer';
 })
 export class VenueListComponent implements OnInit {
   location = {};
-  venueDetails;
-  errorMessage;
+  venueDetails: any;
   error = false;
   constructor(private venueService: VenueService) { }
 
   ngOnInit() {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(position => {
-        this.location = position.coords;
-        // let x = position.coords;
-        console.log(this.location);
-        this.venueService.getVenues(this.location).subscribe( data => {
-          this.venueDetails = data.response.groups[0].items;
-          console.log(this.venueDetails);
+            this.location = position.coords;
+          // let x = position.coords;
+          // console.log(this.location);
+            this.venueService.getVenues(this.location).subscribe( data => {
+          // @ts-ignore
+            this.venueDetails = data.response.groups[0].items;
+          // console.log(data);
+          // console.log(this.venueDetails);
         });
       });
     } else {
