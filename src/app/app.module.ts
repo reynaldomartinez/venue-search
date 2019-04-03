@@ -7,6 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { VenueListComponent } from './venue-list/venue-list.component';
 import { HomeComponent } from './home/home.component';
 import { DropdownListComponent } from './partials/dropdown-list/dropdown-list.component';
+import { TestiComponent } from './testi/testi.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { DropdownListComponent } from './partials/dropdown-list/dropdown-list.co
     AppComponent,
     VenueListComponent,
     HomeComponent,
-    DropdownListComponent
+    DropdownListComponent,
+    TestiComponent
   ],
   imports: [
     BrowserModule,

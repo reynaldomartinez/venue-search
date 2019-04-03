@@ -7,7 +7,7 @@ import {VenueService} from '../services/venue.service';
   styleUrls: ['./venue-list.component.css']
 })
 export class VenueListComponent implements OnInit {
-  location = {};
+  location;
   venueDetails: any;
   error = false;
   constructor(private venueService: VenueService) { }
@@ -18,13 +18,10 @@ export class VenueListComponent implements OnInit {
             this.location = position.coords;
           // let x = position.coords;
           // console.log(this.location);
-            this.venueService.getVenues(this.location).subscribe( data => {
-              // @ts-ignore
-              if (data.response) {
-                // @ts-ignore
+            this.venueService.getVenues(this.location).subscribe( (data): any => {
                 this.venueDetails = data.response.groups[0].items;
-              }
-          // console.log(data);
+                console.log(this.venueDetails);
+                console.log(data);
           // console.log(this.venueDetails);
         });
       });
