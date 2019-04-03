@@ -19,8 +19,11 @@ export class VenueListComponent implements OnInit {
           // let x = position.coords;
           // console.log(this.location);
             this.venueService.getVenues(this.location).subscribe( data => {
-          // @ts-ignore
-            this.venueDetails = data.response.groups[0].items;
+              // @ts-ignore
+              if (data.response) {
+                // @ts-ignore
+                this.venueDetails = data.response.groups[0].items;
+              }
           // console.log(data);
           // console.log(this.venueDetails);
         });
