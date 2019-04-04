@@ -8,7 +8,7 @@ export class VenueService {
   CLIENT_ID = 'CXIHIW45YIDTVE15PCTW2GKN0EFHFT0G0PZTUIUPHDYG540T';
   CLIENT_SECRET = 'DEDVTRN5ASXKVYDQDXIT0BV33H3Q5G2GZRDHAGMHKXIUP3H1';
   constructor(private http: HttpClient) { }
-  getVenues(location) {
+  getVenues(location): any {
     // console.log(location);
     // const latAndLong = `${lat},${long}`;
     // coordinates.forEach((i) => alert(i.latitude) );
