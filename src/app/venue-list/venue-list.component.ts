@@ -29,13 +29,13 @@ export class VenueListComponent implements OnInit {
   }
   getLocation() {
     this.venueService.getVenues(this.location).subscribe( (data) => {
-      this.venueDetails = data.response.groups[0].items[0].venue.name;
-      console.log(data.response);
-      console.log(this.venueDetails);
+      this.venueDetails = data.response.groups[0].items;
+      console.log('data response: ', data.response);
+      console.log('this.venueDetails', this.venueDetails);
       // this.venueDetails = [];
       // this.venueDetails = data.response.groups[0].items;
       //   console.log(this.venueDetails);
-      console.log(data);
+      console.log('data object ', data);
       // console.log(this.venueDetails);
     });
   }
