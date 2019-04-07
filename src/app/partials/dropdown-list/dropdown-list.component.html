@@ -1,4 +1,13 @@
+<div class="list-group mb-5">
+  <a href="https://maps.google.com/?q={{venues.venue.location.lat}},{{venues.venue.location.lng}}" class="list-group-item list-group-item-action" *ngFor="let venues of venueInfo">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">{{venues.venue.name}}</h5>
+    </div>
+    <p>Location: {{ venues.venue.location.formattedAddress[0] }} {{ venues.venue.location.formattedAddress[1] }} {{ venues.venue.location.formattedAddress[2] }}</p>
+    <i class="fas fa-map"></i>&nbsp;<small>Find in Google Maps</small>
+  </a>
 
+</div>
 <!--<div class="accordion" id="accordionExample" >-->
 <!--  <div class="card" *ngFor="let x of venueInfo">-->
 <!--    <div class="card-header" id="headingOne">-->
@@ -20,6 +29,3 @@
 <!--    </div>-->
 <!--  </div>-->
 <!--</div>-->
-<ul *ngFor="let x of venueInfo">
-  <li>{{x.venue.name}}</li>
-</ul>
